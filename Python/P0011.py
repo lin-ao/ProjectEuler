@@ -10,9 +10,9 @@ def parse_list(input_list: str) -> list[list[int]]:
 def check_products(matrix: list[list[int]], coordinate: (int, int)) -> int:
     row_prod = reduce(mul, (matrix[coordinate[0]][coordinate[1] + i] for i in range(4)))
     col_prod = reduce(mul, (matrix[coordinate[0] + i][coordinate[1]] for i in range(4)))
-    diag_prod = reduce(mul, (matrix[coordinate[0] + i][coordinate[1] + i] for i in range(4)))
-    diag_rev_prod = reduce(mul, (list(reversed(matrix))[coordinate[0] + i][coordinate[1] + i] for i in range(4)))
-    return max(row_prod, col_prod, diag_prod, diag_rev_prod)
+    diag_down_prod = reduce(mul, (matrix[coordinate[0] + i][coordinate[1] + i] for i in range(4)))
+    diag_up_prod = reduce(mul, (list(reversed(matrix))[coordinate[0] + i][coordinate[1] + i] for i in range(4)))
+    return max(row_prod, col_prod, diag_down_prod, diag_up_prod)
 
 
 def find_max(matrix: list[list[int]]) -> int:
