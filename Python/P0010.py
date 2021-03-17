@@ -3,7 +3,7 @@ from itertools import takewhile
 from typing import Generator
 
 
-def sieve_of_erastosthenes() -> Generator[int, None, None]:
+def prime_sieve() -> Generator[int, None, None]:
     composites = defaultdict(list)
     number = 2
     while True:
@@ -18,7 +18,7 @@ def sieve_of_erastosthenes() -> Generator[int, None, None]:
 
 
 def sum_primes(upper: int) -> int:
-    return sum(takewhile(lambda x: x < upper, sieve_of_erastosthenes()))
+    return sum(takewhile(lambda x: x < upper, prime_sieve()))
 
 
 def main() -> None:
