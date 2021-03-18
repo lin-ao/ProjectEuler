@@ -1,16 +1,14 @@
 def collatz_seq(number: int, sequence=None) -> list[int]:
     if not sequence:
-        sequence = [number]
+        sequence = []
     if number == 1:
         sequence.append(number)
         return sequence
     else:
         if number & 1 == 0:
-            number = number // 2
-            sequence.append(number)
+            sequence.append(number := number // 2)
         else:
-            number = number * 3 + 1
-            sequence.append(number)
+            sequence.append(number := number * 3 + 1)
         return collatz_seq(number, sequence)
 
 
