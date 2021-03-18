@@ -4,8 +4,7 @@ from operator import mul
 
 def load_matrix(path: str) -> list[list[int]]:
     with open(path, "r") as f:
-        matrix = [[int(col) for col in row.split(" ")] for row in f]
-        return matrix
+        return [[int(col) for col in row.split(" ")] for row in f]
 
 
 def check_products(matrix: list[list[int]], coordinate: (int, int)) -> int:
