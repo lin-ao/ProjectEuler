@@ -1,7 +1,7 @@
 from math import factorial
 
 
-#Permutations of multisets
+# Permutations of multiset
 def calculate_paths(side: int) -> int:
     return factorial(side * 2) // (factorial(side) * factorial(side))
 
