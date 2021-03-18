@@ -4,7 +4,7 @@ from operator import mul
 
 def load_matrix(path: str) -> list[list[int]]:
     with open(path, "r") as f:
-        matrix = [[int(col) for col in row.split(" ") if col] for row in f]
+        matrix = [[int(col) for col in row.split(" ")] for row in f]
         return matrix
 
 
