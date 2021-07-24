@@ -1,7 +1,3 @@
-def calc_modulo(devisor: int, denominator: int) -> int:
-    return devisor * 10 % denominator
-
-
 def count_recurring(denominator: int, remainder: int = None, remainders: list[int] = None) -> int:
     if remainder is None:
         remainder = 1
