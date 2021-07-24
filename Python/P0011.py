@@ -7,7 +7,7 @@ def load_matrix(path: str) -> list[list[int]]:
         return [[int(col) for col in row.split(" ")] for row in f]
 
 
-def check_products(matrix: list[list[int]], coordinate: (int, int)) -> int:
+def check_products(matrix: list[list[int]], coordinate: tuple[int, int]) -> int:
     row_prod = reduce(mul, (matrix[coordinate[0]][coordinate[1] + i] for i in range(4)))
     col_prod = reduce(mul, (matrix[coordinate[0] + i][coordinate[1]] for i in range(4)))
     diag_down_prod = reduce(mul, (matrix[coordinate[0] + i][coordinate[1] + i] for i in range(4)))
