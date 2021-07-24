@@ -1,5 +1,4 @@
 from collections import defaultdict
-from math import pow
 from typing import Generator
 
 
@@ -42,14 +41,13 @@ def consecutive_primes(a: int, b: int, n: int = None, count: int = None) -> tupl
         return (a, b, count)
 
 
-def longest_consecutive(a_limit: int, b_limit: int):
+def longest_consecutive(a_limit: int, b_limit: int) -> tuple[int, int, int]:
     longest = (0, 0, 0)
     for b in prime_sieve(b_limit):
         for a in range(-a_limit, a_limit + 1):
             current = consecutive_primes(a, b)
             if current[2] > longest[2]:
                 longest = current
-    print(longest)
     return longest
 
 
