@@ -3,7 +3,7 @@ def digit_sum_power(number: int, power: int) -> int:
 
 
 def sum_all_numbers(power: int) -> int:
-    max_length = len(str(pow(9, power))) + 1
+    max_length = len(str(9 ** power)) + 1
     numbers = [number for number in range(1, int("9" * max_length)) if digit_sum_power(number, power) == number]
     return sum(numbers) - 1
 

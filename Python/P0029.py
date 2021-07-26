@@ -2,7 +2,7 @@ def count_unique(a: int, b: int) -> int:
     uniques = set()
     for a in range(2, a + 1):
         for b in range(2, b + 1):
-            uniques.add(pow(a, b))
+            uniques.add(a ** b)
     return len(uniques)
 
 

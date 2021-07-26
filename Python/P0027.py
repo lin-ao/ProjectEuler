@@ -26,7 +26,7 @@ def prime_sieve(limit: int) -> Generator[int, None, None]:
 
 
 def quadratic_formula(a: int, b: int, n: int) -> int:
-    return int(pow(n, 2) + a * n + b)
+    return int(n ** 2 + a * n + b)
 
 
 def consecutive_primes(a: int, b: int, n: int = None, count: int = None) -> tuple[int, int, int]:
