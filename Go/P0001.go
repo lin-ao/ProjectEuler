@@ -7,9 +7,9 @@ import (
 func calculate_sum(threshold int, divisible_by []int) int {
 	var sum int = 0
 	for number := 0; number < threshold; number++ {
-		var divisible bool = true
-		for divisor := range divisible_by {
-			divisible = divisible && number%divisor == 0
+		var divisible bool = false
+		for _, divisor := range divisible_by {
+			divisible = divisible || number%divisor == 0
 		}
 		if divisible {
 			sum += number
