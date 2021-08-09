@@ -15,7 +15,7 @@ func reverse(slice []string) []string {
 	return slice_copy
 }
 
-func is_pallindrome(number int) bool {
+func is_palindrome(number int) bool {
 	var number_string []string = strings.Split(strconv.Itoa(number), "")
 	var reversed_number []string = reverse(number_string)
 	if strings.Join(number_string, "") == strings.Join(reversed_number, "") {
@@ -35,9 +35,9 @@ func find_max(numbers []int) int {
 	return max
 }
 
-func largest_pallindrome(threshold int) int {
+func largest_palindrome(threshold int) int {
 	var products chan int = make(chan int)
-	var pallindromes []int
+	var palindromes []int
 	go func() {
 		for i := 1; i <= threshold; i++ {
 			for j := 1; j <= threshold; j++ {
@@ -47,15 +47,15 @@ func largest_pallindrome(threshold int) int {
 		close(products)
 	}()
 	for product := range products {
-		if is_pallindrome(product) {
-			pallindromes = append(pallindromes, product)
+		if is_palindrome(product) {
+			palindromes = append(palindromes, product)
 		}
 	}
-	var largest int = find_max(pallindromes)
+	var largest int = find_max(palindromes)
 	return largest
 }
 
 func main() {
-	var answer int = largest_pallindrome(999)
+	var answer int = largest_palindrome(999)
 	fmt.Printf("Answer: %v", answer)
 }
